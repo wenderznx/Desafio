@@ -14,21 +14,10 @@ int main(){
     double v1, v2, v3;
     double p1, p2, p3;
 
-    cout << "Digite o nome do primeiro produto (1 a 15 caracteres): "; cin >> n1;
-    cout << "Digie o peso em gramas do produto (1 a 25.000 gramas): "; cin >> g1;
-    cout << "Digite o valor unitario (0,01 a 1000): "; cin >> v1;
-
-    cout << "---------------------------------" << endl;
-
-    cout << "Digite o nome do segundo produto (1 a 15 caracteres): "; cin >> n2;
-    cout << "Digite o peso em gramas do produto (1 a 25.000): "; cin >> g2;
-    cout << "Digite o valor unitário (0,01 a 1000): "; cin >> v2;
-
-    cout << "---------------------------------" << endl;
-
-    cout << "Digite o nome do terceiro produto (1 a 15 caracteres): "; cin >> n3;
-    cout << "Digite o peso em gramas do produto (1 a 25.000): "; cin >> g3;
-    cout << "Digite o valor unitário (0,01 a 1000): "; cin >> v3;
+    if (!(cin >> n1 >> v1 >> g1 >> n2 >> v2 >> g2 >> n3 >> v3 >> g3)) {
+        cout << "Entrada de dados inválida" << endl;
+        return 0;
+    }
 
     cout << "---------------------------------" << endl;
 
@@ -89,21 +78,18 @@ int main(){
 
     // Condição da Ordem Decrescente de valores (obs: falta colocar o nome de acordo com o pdf lá).
     if (p1 > p2 && p1 > p3){
-        cout << p1 << endl;
-        if (p2 > p3) cout << p2 << endl << p3 << endl;
-        else cout << p3 << endl << p2 << endl;
+        cout << n1 << endl;
+        if (p2 > p3) cout << n2 << endl << n3 << endl;
+        else cout << n3 << endl << n2 << endl;
     }else if (p2 > p3 && p2 > p1){
-        cout << p2 << endl;
-        if (p1 > p3) cout << p1 << endl << p3 <<endl;
-        else cout << p3 << endl << p1 << endl;
+        cout << n2 << endl;
+        if (p1 > p3) cout << n1 << endl << n3 <<endl;
+        else cout << n3 << endl << n1 << endl;
     }else{
-        cout << p3 << endl;
-        if (p2 > p1) cout << p2 << endl << p1 << endl;
-        else cout << p1 << endl << p2 << endl;
+        cout << n3 << endl;
+        if (p2 > p1) cout << n2 << endl << n1 << endl;
+        else cout << n1 << endl << n2 << endl;
     }
 
-    system("pause");
     return 0;
 }
-
-
